@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension version="3.1" type="plugin" group="system" method="upgrade">
+	<name>System - Facebook API</name>
+	<author>Tom Arns</author>
+	<creationDate>August 2021</creationDate>
+	<copyright>(C) 2021 Tom Arns</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE</license>
+	<authorEmail>mail@tomarns.nl</authorEmail>
+	<authorUrl>www.tomarns.nl</authorUrl>
+	<version>3.0.0</version>
+	<description>Facebook API for all Joomla 3.x/4.x Facebook Modules</description>
+
+	<files>
+		<filename plugin="facebookapi">facebookapi.php</filename>
+	</files>
+
+	<updateservers>
+		<server type="extension" name="Facebook API plugin" priority="1">https://raw.githubusercontent.com/t0m0094/joomla_packageupdate/main/j3-plugin_facebookapi.xml</server>
+	</updateservers>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="gdpr_status"
+					type="radio"
+					label="Enable the GDPR check"
+					class="switcher"
+					default="0"
+					filter="integer"
+				>
+					<option value="0">JOFF</option>
+					<option value="1">JON</option>
+				</field>
+				<field
+					name="gdpr_cookie_name"
+					type="text"
+					label="The name of the GDPR cookie"
+					default="cookieconsent_status"
+				/>
+				<field
+					name="gdpr_cookie_value"
+					type="text"
+					label="The value of the GDPR cookie when loading is allowed"
+					default="allow"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
